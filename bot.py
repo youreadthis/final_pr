@@ -44,7 +44,7 @@ def com_stt(message):
                 file_info = bot.get_file(file_id)  # получаем информацию о голосовом сообщении
                 file = bot.download_file(file_info.file_path)  # скачиваем голосовое сообщение
                 lenght = math.ceil(message.voice.duration / 15)
-                bot.send_voice(user, stt(file, user, lenght))
+                bot.send_message(user, stt(file, user, lenght))
             else:
                 bot.send_message(message.from_user.id, "Похоже вы исчерпали лимиты или пользователей слишком много")
         else:

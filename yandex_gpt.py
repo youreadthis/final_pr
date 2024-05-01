@@ -43,6 +43,5 @@ def count_tokens_in_dialog(messages, role):
        "maxTokens": 100,
        "messages": out
     }
-    print(requests.post(url=url, json=data, headers=headers).json())
     return len(requests.post(url=url, json=data, headers=headers).json()['tokens'])
 
